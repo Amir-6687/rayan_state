@@ -34,12 +34,12 @@ function SinglePage() {
       navigate("/login");
       return;
     }
-    
+
     try {
       // Create a new chat with the post owner
       const res = await apiRequest.post("/chats", { receiverId: post.user.id });
       console.log("New chat created:", res.data);
-      
+
       // Navigate to profile page where chat functionality is available
       navigate("/profile");
     } catch (err) {

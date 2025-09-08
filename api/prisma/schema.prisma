@@ -78,13 +78,11 @@ model User {
   createdAt  DateTime    @default(now())
   posts      Post[]
   savedPosts SavedPost[]
-  chats      Chat[]      @relation(fields: [chatIDs], references: [id])
   chatIDs    String[]    @db.ObjectId
 }
 
 model Chat {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  users     User[]    @relation(fields: [userIDs], references: [id])
   userIDs   String[]  @db.ObjectId
   createdAt DateTime  @default(now())
   seenBy    String[]  @db.ObjectId

@@ -1,2 +1,80 @@
 [dotenv@17.2.2] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
 Server running on port 8800
+PrismaClientValidationError: 
+Invalid `prisma.chat.create()` invocation:
+
+{
+  data: {
+    userIDs: [
+      "68bc7da960854d0c10064b75",
+      undefined
+      ~~~~~~~~~
+    ]
+  }
+}
+
+Invalid value for argument `userIDs[1]`: Can not use `undefined` value within array. Use `null` or filter out `undefined` values.
+    at kn (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at e.throwValidationError (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:10051)
+    at im (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:9156)
+    at Ia (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:7861)
+    at ka (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8741)
+    at Ia (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8272)
+    at ka (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8741)
+    at Et (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:5845)
+    at Nn (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:5747)
+    at /home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:130:10331 {
+  clientVersion: '6.9.0'
+}
+PrismaClientValidationError: 
+Invalid `prisma.chat.create()` invocation:
+
+{
+  data: {
+    userIDs: [
+      "68bc7da960854d0c10064b75",
+      undefined
+      ~~~~~~~~~
+    ]
+  }
+}
+
+Invalid value for argument `userIDs[1]`: Can not use `undefined` value within array. Use `null` or filter out `undefined` values.
+    at kn (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at e.throwValidationError (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:10051)
+    at im (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:9156)
+    at Ia (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:7861)
+    at ka (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8741)
+    at Ia (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8272)
+    at ka (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8741)
+    at Et (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:5845)
+    at Nn (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:5747)
+    at /home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:130:10331 {
+  clientVersion: '6.9.0'
+}
+PrismaClientValidationError: 
+Invalid `prisma.chat.create()` invocation:
+
+{
+  data: {
+    userIDs: [
+      "68bc7da960854d0c10064b75",
+      undefined
+      ~~~~~~~~~
+    ]
+  }
+}
+
+Invalid value for argument `userIDs[1]`: Can not use `undefined` value within array. Use `null` or filter out `undefined` values.
+    at kn (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at e.throwValidationError (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:10051)
+    at im (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:9156)
+    at Ia (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:7861)
+    at ka (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8741)
+    at Ia (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8272)
+    at ka (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:8741)
+    at Et (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:5845)
+    at Nn (/home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:29:5747)
+    at /home/dci-student/r-estate/estateApp/api/node_modules/@prisma/client/runtime/library.js:130:10331 {
+  clientVersion: '6.9.0'
+}
