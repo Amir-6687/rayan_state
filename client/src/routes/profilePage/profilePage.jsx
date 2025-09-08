@@ -46,7 +46,11 @@ function ProfilePage() {
             <span>
               E-mail: <b>{currentUser.email}</b>
             </span>
-            <ButtonCta label="Logout" onClick={handleLogout} className="w-fit" />
+            <ButtonCta
+              label="Logout"
+              onClick={handleLogout}
+              className="w-fit"
+            />
           </div>
           <div className="title">
             <h1>My List</h1>
