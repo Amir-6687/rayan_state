@@ -29,6 +29,24 @@ function SinglePage() {
     }
   };
 
+  const handleSendMessage = async () => {
+    if (!currentUser) {
+      navigate("/login");
+      return;
+    }
+    
+    try {
+      // Create a new chat with the post owner
+      const res = await apiRequest.post("/chats", { receiverId: post.user.id });
+      console.log("New chat created:", res.data);
+      
+      // Navigate to profile page where chat functionality is available
+      navigate("/profile");
+    } catch (err) {
+      console.log("Error creating chat:", err);
+    }
+  };
+
   return (
     <div className="singlePage">
       <div className="details">
@@ -141,7 +159,7 @@ function SinglePage() {
             <Map items={[post]} />
           </div>
           <div className="buttons">
-            <button>
+            <button onClick={handleSendMessage}>
               <img src="/chat.png" alt="" />
               Send a Message
             </button>
