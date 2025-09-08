@@ -24,7 +24,7 @@ const GlowButton = ({ children = 'Register' }) => {
       </svg>
 
       {/* Hidden Button */}
-      <button className="absolute w-[120px] h-[60px] z-20 outline-none border-none rounded-[17px] cursor-pointer opacity-0" />
+      <button className="absolute w-[100px] h-[50px] z-20 outline-none border-none rounded-[17px] cursor-pointer opacity-0" />
 
       {/* Backdrop */}
       <div className="absolute dark:inset-[-9900%] dark:bg-[radial-gradient(circle_at_50%_50%,#0000_0,#0000_20%,#111111aa_50%)] bg-[length:3px_3px] -z-10" />
@@ -89,9 +89,9 @@ const GlowButton = ({ children = 'Register' }) => {
             
             {/* Button Surface */}
             <div 
-              className="flex flex-col items-center justify-center w-[120px] h-[60px] bg-[#111215] text-white overflow-hidden"
+              className="flex flex-col items-center justify-center w-[100px] h-[50px] bg-[#111215] text-white overflow-hidden"
               style={{ 
-                clipPath: 'path("M 90 0 C 115 0 120 5 120 30 C 120 55 115 60 90 60 L 30 60 C 5 60 0 55 0 30 C 0 5 5 0 30 0 Z")',
+                clipPath: 'path("M 75 0 C 95 0 100 5 100 25 C 100 45 95 50 75 50 L 25 50 C 5 50 0 45 0 25 C 0 5 5 0 25 0 Z")',
                 borderRadius: '0.875em'
               }}
             >
