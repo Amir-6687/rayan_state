@@ -102,18 +102,21 @@
   }
 }
 
-// Remove outline from ButtonCta
-:global(.group) {
-  outline: none !important;
-  box-shadow: none !important;
-
-  &:focus {
-    outline: none !important;
-    box-shadow: none !important;
+// GlowButton styling
+.group {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
   }
-
-  &:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
+  
+  // Ensure glow effects are centered
+  .relative {
+    position: relative;
+    display: inline-block;
   }
 }

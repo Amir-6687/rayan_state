@@ -5,6 +5,7 @@ import apiRequest from "../../lib/apiRequest";
 import { Await, Link, useLoaderData, useNavigate } from "react-router-dom";
 import { Suspense, useContext } from "react";
 import { AuthContext } from "/src/context/AuthContext.jsx";
+import { GlowButton } from "../../components/ui/shiny-button-1";
 
 function ProfilePage() {
   const data = useLoaderData();
@@ -45,7 +46,9 @@ function ProfilePage() {
             <span>
               E-mail: <b>{currentUser.email}</b>
             </span>
-            <button onClick={handleLogout}>Logout</button>
+            <div onClick={handleLogout}>
+              <GlowButton>Logout</GlowButton>
+            </div>
           </div>
           <div className="title">
             <h1>My List</h1>
