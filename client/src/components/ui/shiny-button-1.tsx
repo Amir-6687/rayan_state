@@ -1,7 +1,7 @@
-import React, { useId } from 'react';
+import React, { useId } from "react";
 
-const GlowButton = ({ children = 'Register' }) => {
-  const id = useId().replace(/:/g, '');
+const GlowButton = ({ children = "Register" }) => {
+  const id = useId().replace(/:/g, "");
   const filters = {
     unopaq: `unopaq-${id}`,
     unopaq2: `unopaq2-${id}`,
@@ -9,16 +9,34 @@ const GlowButton = ({ children = 'Register' }) => {
   };
 
   return (
-    <div className="relative group">
+    <div className="relative group rounded-[17px]">
       {/* SVG Filters */}
-      <svg style={{ position: 'absolute', width: 0, height: 0 }}>
-        <filter width="300%" x="-100%" height="300%" y="-100%" id={filters.unopaq}>
+      <svg style={{ position: "absolute", width: 0, height: 0 }}>
+        <filter
+          width="300%"
+          x="-100%"
+          height="300%"
+          y="-100%"
+          id={filters.unopaq}
+        >
           <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 9 0" />
         </filter>
-        <filter width="300%" x="-100%" height="300%" y="-100%" id={filters.unopaq2}>
+        <filter
+          width="300%"
+          x="-100%"
+          height="300%"
+          y="-100%"
+          id={filters.unopaq2}
+        >
           <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 3 0" />
         </filter>
-        <filter width="300%" x="-100%" height="300%" y="-100%" id={filters.unopaq3}>
+        <filter
+          width="300%"
+          x="-100%"
+          height="300%"
+          y="-100%"
+          id={filters.unopaq3}
+        >
           <feColorMatrix values="1 0 0 0.2 0 0 1 0 0.2 0 0 0 1 0.2 0 0 0 0 2 0" />
         </filter>
       </svg>
@@ -32,67 +50,75 @@ const GlowButton = ({ children = 'Register' }) => {
       {/* Button Container */}
       <div className="relative">
         {/* Outer Glow Layer */}
-        <div 
-          className="absolute inset-0 -z-20 opacity-50 overflow-hidden transition-opacity duration-300
-                     group-hover:opacity-75 group-active:opacity-100"
-          style={{ filter: `blur(2em) url(#${filters.unopaq})` }}
+        <div
+          className="absolute inset-0 -z-20 opacity-70 overflow-hidden transition-opacity duration-300
+                     group-hover:opacity-90 group-active:opacity-100 rounded-[17px]"
+          style={{
+            filter: `blur(2em) url(#${filters.unopaq})`,
+            borderRadius: "17px",
+          }}
         >
-          <div 
-            className="absolute inset-[-150%] group-hover:animate-[speen_8s_cubic-bezier(0.56,0.15,0.28,0.86)_infinite,woah_4s_infinite]"
-            style={{ 
-              background: 'linear-gradient(90deg, #f50 30%, #0000 50%, #05f 70%)',
+          <div
+            className="absolute inset-[-150%] group-hover:animate-[speen_8s_cubic-bezier(0.56,0.15,0.28,0.86)_infinite,woah_4s_infinite] rounded-[17px]"
+            style={{
+              background:
+                "linear-gradient(90deg, #f50 30%, #0000 50%, #05f 70%)",
             }}
           />
         </div>
 
         {/* Middle Glow Layer */}
-        <div 
-          className="absolute inset-[-0.125em] -z-20 opacity-50 overflow-hidden transition-opacity duration-300
-                     group-hover:opacity-75 group-active:opacity-100"
-          style={{ 
+        <div
+          className="absolute inset-[-0.125em] -z-20 opacity-70 overflow-hidden transition-opacity duration-300
+                     group-hover:opacity-90 group-active:opacity-100 rounded-[17px]"
+          style={{
             filter: `blur(0.25em) url(#${filters.unopaq2})`,
-            borderRadius: '0.75em'
+            borderRadius: "17px",
           }}
         >
-          <div 
-            className="absolute inset-[-150%] group-hover:animate-[speen_8s_cubic-bezier(0.56,0.15,0.28,0.86)_infinite,woah_4s_infinite]"
-            style={{ 
-              background: 'linear-gradient(90deg, #f95 20%, #0000 45% 55%, #59f 80%)',
+          <div
+            className="absolute inset-[-150%] group-hover:animate-[speen_8s_cubic-bezier(0.56,0.15,0.28,0.86)_infinite,woah_4s_infinite] rounded-[17px]"
+            style={{
+              background:
+                "linear-gradient(90deg, #f95 20%, #0000 45% 55%, #59f 80%)",
             }}
           />
         </div>
 
         {/* Button Border */}
-        <div 
+        <div
           className="p-0.5 bg-[#0005] rounded-[inherit]"
-          style={{ 
-            clipPath: 'path("M 90 0 C 121 0 126 5 126 33 C 126 61 121 66 90 66 L 33 66 C 5 66 0 61 0 33 C 0 5 5 0 33 0 Z")' 
+          style={{
+            clipPath:
+              'path("M 90 0 C 121 0 126 5 126 33 C 126 61 121 66 90 66 L 33 66 C 5 66 0 61 0 33 C 0 5 5 0 33 0 Z")',
           }}
         >
           <div className="relative">
             {/* Inner Glow Layer */}
-            <div 
-              className="absolute inset-[-2px] -z-10 opacity-50 overflow-hidden transition-opacity duration-300
-                         group-hover:opacity-75 group-active:opacity-100"
-              style={{ 
+            <div
+              className="absolute inset-[-2px] -z-10 opacity-70 overflow-hidden transition-opacity duration-300
+                         group-hover:opacity-90 group-active:opacity-100 rounded-[17px]"
+              style={{
                 filter: `blur(2px) url(#${filters.unopaq3})`,
-                borderRadius: 'inherit'
+                borderRadius: "17px",
               }}
             >
-              <div 
-                className="absolute inset-[-150%] group-hover:animate-[speen_8s_cubic-bezier(0.56,0.15,0.28,0.86)_infinite,woah_4s_infinite]"
-                style={{ 
-                  background: 'linear-gradient(90deg, #fc9 30%, #0000 45% 55%, #9cf 70%)',
+              <div
+                className="absolute inset-[-150%] group-hover:animate-[speen_8s_cubic-bezier(0.56,0.15,0.28,0.86)_infinite,woah_4s_infinite] rounded-[17px]"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #fc9 30%, #0000 45% 55%, #9cf 70%)",
                 }}
               />
             </div>
-            
+
             {/* Button Surface */}
-            <div 
+            <div
               className="flex flex-col items-center justify-center w-[100px] h-[50px] bg-[#111215] text-white overflow-hidden"
-              style={{ 
-                clipPath: 'path("M 75 0 C 95 0 100 5 100 25 C 100 45 95 50 75 50 L 25 50 C 5 50 0 45 0 25 C 0 5 5 0 25 0 Z")',
-                borderRadius: '0.875em'
+              style={{
+                clipPath:
+                  'path("M 75 0 C 95 0 100 5 100 25 C 100 45 95 50 75 50 L 25 50 C 5 50 0 45 0 25 C 0 5 5 0 25 0 Z")',
+                borderRadius: "0.875em",
               }}
             >
               {children}
@@ -101,19 +127,34 @@ const GlowButton = ({ children = 'Register' }) => {
         </div>
       </div>
 
-      <style jsx global>{`
-        @keyframes speen {
-          0% { transform: rotate(10deg); }
-          50% { transform: rotate(190deg); }
-          100% { transform: rotate(370deg); }
-        }
-        @keyframes woah {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(0.75); }
-        }
-      `}</style>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes speen {
+            0% {
+              transform: rotate(10deg);
+            }
+            50% {
+              transform: rotate(190deg);
+            }
+            100% {
+              transform: rotate(370deg);
+            }
+          }
+          @keyframes woah {
+            0%,
+            100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(0.75);
+            }
+          }
+        `,
+        }}
+      />
     </div>
   );
 };
 
-export {GlowButton};
+export { GlowButton };
