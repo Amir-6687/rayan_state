@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./slider.scss";
 
 function Slider({ images }) {
@@ -20,21 +20,41 @@ function Slider({ images }) {
     }
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (imageIndex !== null) {
+        if (e.key === "ArrowLeft") {
+          changeSlide("left");
+        } else if (e.key === "ArrowRight") {
+          changeSlide("right");
+        } else if (e.key === "Escape") {
+          setImageIndex(null);
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [imageIndex]);
+
   return (
     <div className="slider">
       {imageIndex !== null && (
         <div className="fullSlider">
-          <div className="arrow" onClick={() => changeSlide("left")}>
+          <div className="arrow left" onClick={() => changeSlide("left")}>
             <img src="/arrow.png" alt="" />
           </div>
           <div className="imgContainer">
             <img src={images[imageIndex]} alt="" />
           </div>
-          <div className="arrow" onClick={() => changeSlide("right")}>
+          <div className="arrow right" onClick={() => changeSlide("right")}>
             <img src="/arrow.png" className="right" alt="" />
           </div>
           <div className="close" onClick={() => setImageIndex(null)}>
-            X
+            ×
+          </div>
+          <div className="imageCounter">
+            {imageIndex + 1} / {images.length}
           </div>
         </div>
       )}

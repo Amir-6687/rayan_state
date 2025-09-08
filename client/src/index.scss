@@ -1,4 +1,8 @@
-*{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -9,7 +13,43 @@ a {
   color: inherit;
 }
 
-body{
+body {
   font-family: "Lato", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  background-color: #09090b;
+  color: #ffffff;
+  zoom: 1.1;
+  transform-origin: top left;
+}
+
+/* Custom scrollbar styles for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #fece51, #f39c12);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  transform: scale(1.1);
+}
+
+::-webkit-scrollbar-corner {
+  background: #1a1a1f;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fece51 #1a1a1f;
 }

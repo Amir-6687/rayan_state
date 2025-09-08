@@ -1,0 +1,313 @@
+@import "../../responsive.scss";
+
+.agentsPage {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: bold;
+
+      @include md {
+        font-size: 36px;
+      }
+
+      @include sm {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      opacity: 0.9;
+
+      @include sm {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .content {
+    padding: 80px 0;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 60px;
+
+      h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #333;
+
+        @include sm {
+          font-size: 24px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+
+        @include sm {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .agentsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+
+      @include sm {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .agentCard {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .agentImage {
+          position: relative;
+          height: 200px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .rating {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+
+        .agentInfo {
+          padding: 25px;
+
+          h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #333;
+          }
+
+          .title {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+
+          .experience {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+          }
+
+          .specialties {
+            margin-bottom: 20px;
+
+            h4 {
+              font-size: 16px;
+              margin-bottom: 10px;
+              color: #333;
+            }
+
+            .tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+
+              .tag {
+                background: #f0f2f5;
+                color: #333;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 500;
+              }
+            }
+          }
+
+          .stats {
+            margin-bottom: 20px;
+
+            .stat {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              padding: 15px;
+              background: #f8f9fa;
+              border-radius: 8px;
+
+              .number {
+                font-size: 24px;
+                font-weight: bold;
+                color: #667eea;
+              }
+
+              .label {
+                font-size: 12px;
+                color: #666;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+              }
+            }
+          }
+
+          .contact {
+            margin-bottom: 20px;
+
+            .contactItem {
+              display: flex;
+              align-items: center;
+              margin-bottom: 8px;
+              font-size: 14px;
+              color: #666;
+
+              .icon {
+                margin-right: 8px;
+                font-size: 16px;
+              }
+            }
+          }
+
+          .contactBtn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+
+    .cta {
+      text-align: center;
+      background: white;
+      padding: 60px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      @include sm {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #333;
+
+        @include sm {
+          font-size: 24px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include sm {
+          font-size: 16px;
+        }
+      }
+
+      .ctaButtons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        @include sm {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .primaryBtn,
+        .secondaryBtn {
+          padding: 15px 30px;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+        }
+
+        .primaryBtn {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border: none;
+        }
+
+        .secondaryBtn {
+          background: transparent;
+          color: #667eea;
+          border: 2px solid #667eea;
+
+          &:hover {
+            background: #667eea;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

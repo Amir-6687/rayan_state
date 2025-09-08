@@ -1,6 +1,8 @@
 @import "../../responsive.scss";
 
 .searchBar {
+  position: relative;
+  z-index: 1;
   .type {
     button {
       padding: 16px 36px;

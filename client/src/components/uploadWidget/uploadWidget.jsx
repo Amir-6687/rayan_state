@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const CloudinaryUploadWidget = ({ uwConfig, setState }) => {
+const CloudinaryUploadWidget = ({ uwConfig, setState, state = [] }) => {
   const uploadWidgetRef = useRef(null);
   const uploadButtonRef = useRef(null);
 
@@ -12,7 +12,11 @@ const CloudinaryUploadWidget = ({ uwConfig, setState }) => {
           (error, result) => {
             if (!error && result && result.event === "success") {
               console.log("Upload successful:", result.info);
-              setState((prev) => [...prev, result.info.secure_url]);
+              setState((prev) => {
+                const newImages = [...(prev || []), result.info.secure_url];
+                console.log("Updated images:", newImages);
+                return newImages;
+              });
             }
           }
         );

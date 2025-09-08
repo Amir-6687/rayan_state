@@ -1,5 +1,6 @@
 import "./layout.scss";
 import Navbar from "../../components/navbar/Navbar";
+import { Footer } from "../../components/ui/footer-section";
 import { Navigate, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -13,6 +14,7 @@ export function Layout() {
       <div className="content">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }
@@ -30,6 +32,7 @@ export function RequireAuth() {
       <div className="content">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }

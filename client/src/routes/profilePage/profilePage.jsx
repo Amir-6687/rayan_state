@@ -11,6 +11,8 @@ function ProfilePage() {
 
   const { updateUser, currentUser } = useContext(AuthContext);
 
+  console.log("ProfilePage data:", data);
+
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -35,7 +37,7 @@ function ProfilePage() {
           <div className="info">
             <span>
               Avatar:
-              <img src={currentUser.avatar || "noavatar.jpg"} alt="" />
+              <img src={currentUser.avatar || "noavatar.png"} alt="" />
             </span>
             <span>
               Username: <b>{currentUser.username}</b>
@@ -74,12 +76,15 @@ function ProfilePage() {
       </div>
       <div className="chatContainer">
         <div className="wrapper">
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<p>Loading chats...</p>}>
             <Await
               resolve={data.chatResponse}
               errorElement={<p>Error loading chats!</p>}
             >
-              {(chatResponse) => <Chat chats={chatResponse.data} />}
+              {(chatResponse) => {
+                console.log("Chat response:", chatResponse);
+                return <Chat chats={chatResponse.data || []} />;
+              }}
             </Await>
           </Suspense>
         </div>

@@ -1,13 +1,25 @@
 @import "../../responsive.scss";
 
+// Global styles for Link components
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
 nav {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 
   a {
     transition: all 0.4s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 
     @include sm {
       display: none;
@@ -16,6 +28,17 @@ nav {
     &:hover {
       scale: 1.05;
     }
+  }
+
+  .left a {
+    @include sm {
+      display: none;
+    }
+  }
+
+  // Style for Link components (React Router)
+  a[href] {
+    cursor: pointer;
   }
 
   .left {
@@ -33,6 +56,8 @@ nav {
 
       img {
         width: 28px;
+        /* light gray logo on dark theme */
+        filter: brightness(0) invert(0.85) contrast(0.9);
       }
 
       span {
@@ -51,22 +76,47 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #fcf5f3;
+    background-color: #1a1a1f;
     height: 100%;
+    gap: 0;
+    border-radius: 12px 12px 12px 12px;
 
     @include md {
       background-color: transparent;
     }
 
+    > * {
+      display: inline-block;
+      vertical-align: top;
+    }
+
     a {
       padding: 12px 24px;
-      margin: 20px;
+      margin: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      pointer-events: auto;
+      position: relative;
+      z-index: 1001;
+      vertical-align: top;
+      line-height: 1;
+      height: auto;
+
+      @include sm {
+        display: none;
+      }
     }
 
     .user {
       display: flex;
       align-items: center;
       font-weight: bold;
+
+      @include sm {
+        display: none;
+      }
 
       img {
         width: 40px;
@@ -106,7 +156,27 @@ nav {
     }
 
     .register {
-      background-color: #fece51;
+      background-color: #fece51 !important;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 24px !important;
+      margin: 10px !important;
+      display: inline-block !important;
+      text-decoration: none;
+      color: inherit;
+      vertical-align: top;
+      line-height: 1;
+      height: auto;
+    }
+
+    a:not(.register) {
+      background-color: transparent;
+      color: #ffffff;
+      cursor: pointer;
+      vertical-align: top;
+      line-height: 1;
+      height: auto;
     }
 
     .menuIcon {
@@ -120,7 +190,7 @@ nav {
       }
 
       @include sm {
-        display: inline;
+        display: block;
       }
     }
 
@@ -128,12 +198,12 @@ nav {
       position: absolute;
       top: 0;
       right: -50%;
-      background-color: black;
+      background-color: #09090b;
       color: white;
       height: 100vh;
       width: 50%;
       transition: all 1s ease;
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -144,8 +214,14 @@ nav {
       }
 
       @include sm {
+        display: flex;
+
         a {
           display: initial;
+          cursor: pointer;
+          text-decoration: none;
+          color: white;
+          padding: 10px 0;
         }
       }
     }

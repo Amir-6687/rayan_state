@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import SearchBar from "../../components/searchBar/SearchBar";
+import AnimatedSearchBar from "../../components/searchBar/AnimatedSearchBar";
 import "./homePage.scss";
 import { AuthContext } from "../../context/AuthContext";
 
 function HomePage() {
   const { currentUser } = useContext(AuthContext);
 
-  console.log(currentUser);
+  // console.log(currentUser);
 
   return (
     <div className="homePage">
@@ -19,7 +20,15 @@ function HomePage() {
             facilis id pariatur fugit quos laudantium temporibus dolor ea
             repellat provident impedit!
           </p>
-          <SearchBar />
+          <div className="search-container">
+            <AnimatedSearchBar
+              onSearch={(searchTerm) => {
+                console.log("Searching for:", searchTerm);
+                // Add search logic here
+              }}
+              placeholder="Search properties..."
+            />
+          </div>
           <div className="boxes">
             <div className="box">
               <h1>16+</h1>
@@ -37,7 +46,15 @@ function HomePage() {
         </div>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="" />
+        <img
+          src="/bg.png"
+          alt="Real Estate Background"
+          onError={(e) => {
+            e.target.style.display = "none";
+            e.target.parentElement.style.background =
+              "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+          }}
+        />
       </div>
     </div>
   );

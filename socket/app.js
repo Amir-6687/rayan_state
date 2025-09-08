@@ -1,8 +1,16 @@
 import { Server } from "socket.io";
 
+// const io = new Server(server, {
+//   cors: {
+//     origin: ["https://rayan-state.vercel.app", "http://localhost:5173"],
+//     methods: ["GET", "POST"],
+//     credentials: true,
+//   },
+// });
+
 const io = new Server({
   cors: {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "http://192.168.178.183:5173"],
   },
 });
 
@@ -42,4 +50,4 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen("4000");
+io.listen(4000, { host: "0.0.0.0" });

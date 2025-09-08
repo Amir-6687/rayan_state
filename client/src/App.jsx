@@ -8,6 +8,10 @@ import Login from "./routes/login/login";
 import Register from "./routes/register/register";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
+import EditPostPage from "./routes/editPostPage/editPostPage";
+import AboutPage from "./routes/aboutPage/aboutPage";
+import ContactPage from "./routes/contactPage/contactPage";
+import AgentsPage from "./routes/agentsPage/agentsPage";
 import { profilePageLoader, singlePageLoader } from "./lib/loaders.js";
 import { listPageLoader } from "./lib/loaders.js";
 
@@ -32,12 +36,29 @@ function App() {
           loader: singlePageLoader,
         },
         {
+          path: "/post/:id",
+          element: <SinglePage />,
+          loader: singlePageLoader,
+        },
+        {
           path: "/login",
           element: <Login />,
         },
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/about",
+          element: <AboutPage />,
+        },
+        {
+          path: "/contact",
+          element: <ContactPage />,
+        },
+        {
+          path: "/agents",
+          element: <AgentsPage />,
         },
       ],
     },
@@ -57,6 +78,10 @@ function App() {
         {
           path: "/add",
           element: <NewPostPage />,
+        },
+        {
+          path: "/edit/:id",
+          element: <EditPostPage />,
         },
       ],
     },

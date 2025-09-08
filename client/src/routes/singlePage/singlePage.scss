@@ -3,6 +3,7 @@
 .singlePage {
   display: flex;
   height: 100%;
+  margin-top: 40px;
 
   @include md {
     flex-direction: column;
@@ -12,7 +13,7 @@
   .details {
     flex: 3;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: visible;
 
     @include md {
       flex: none;
@@ -102,9 +103,9 @@
   }
   .features {
     flex: 2;
-    background-color: #fcf5f3;
+    background-color: #0b0b0f;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: visible;
 
     @include md {
       flex: none;
@@ -117,6 +118,8 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      padding-top: 30px;
+      padding-bottom: 50px;
 
       @include md {
         padding: 20px;
@@ -125,12 +128,14 @@
       img {
         width: 24px;
         height: 24px;
+        filter: brightness(0) invert(0.6);
       }
 
       .title {
         font-weight: bold;
         font-size: 18px;
         margin-bottom: 10px;
+        color: #e5e7eb;
       }
 
       .feature {
@@ -139,7 +144,7 @@
         gap: 10px;
 
         img {
-          background-color: rgba(254, 205, 81, 0.209);
+          background-color: transparent;
         }
 
         .featureText {
@@ -157,15 +162,19 @@
         flex-direction: column;
         gap: 20px;
         padding: 20px 10px;
-        background-color: white;
+        background-color: #111217;
+        border: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 10px;
+        color: #cbd5e1;
       }
       .listHorizontal {
         display: flex;
         justify-content: space-between;
         padding: 20px 10px;
-        background-color: white;
+        background-color: #111217;
+        border: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 10px;
+        color: #cbd5e1;
       }
 
       .sizes {
@@ -180,7 +189,9 @@
           display: flex;
           align-items: center;
           gap: 10px;
-          background-color: white;
+          background-color: #111217;
+          color: #e5e7eb;
+          border: 1px solid rgba(255, 255, 255, 0.06);
           padding: 10px;
           border-radius: 5px;
         }
@@ -200,7 +211,8 @@
           display: flex;
           align-items: center;
           gap: 5px;
-          background-color: white;
+          background-color: #111217;
+          color: #e5e7eb;
           border: 1px solid #fece51;
           border-radius: 5px;
           cursor: pointer;
@@ -208,6 +220,25 @@
           img {
             width: 16px;
             height: 16px;
+          }
+
+          /* فقط دکمه Save را طلایی کن */
+          &:nth-child(2) {
+            background: linear-gradient(135deg, #fece51, #f39c12);
+            color: #1a1a1f;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: linear-gradient(135deg, #f39c12, #e67e22);
+              transform: translateY(-2px);
+              box-shadow: 0 4px 12px rgba(254, 206, 81, 0.3);
+            }
+
+            img {
+              filter: brightness(0) invert(0.2);
+            }
           }
         }
       }

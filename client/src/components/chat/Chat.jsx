@@ -11,6 +11,8 @@ function Chat({ chats }) {
   const { currentUser } = useContext(AuthContext);
   const { socket } = useContext(SocketContext);
 
+  console.log("Chat component received chats:", chats);
+
   const messageEndRef = useRef();
 
   const decrease = useNotificationStore((state) => state.decrease);
@@ -79,29 +81,35 @@ function Chat({ chats }) {
     <div className="chat">
       <div className="messages">
         <h1>Messages</h1>
-        {chats?.map((c) => (
-          <div
-            className="message"
-            key={c.id}
-            style={{
-              backgroundColor:
-                c.seenBy.includes(currentUser.id) || chat?.id === c.id
-                  ? "white"
-                  : "#fecd514e",
-            }}
-            onClick={() => handleOpenChat(c.id, c.receiver)}
-          >
-            <img src={c.receiver.avatar || "/noavatar.jpg"} alt="" />
-            <span>{c.receiver.username}</span>
-            <p>{c.lastMessage}</p>
+        {chats && chats.length > 0 ? (
+          chats.map((c) => (
+            <div
+              className="message"
+              key={c.id}
+              style={{
+                backgroundColor:
+                  c.seenBy.includes(currentUser.id) || chat?.id === c.id
+                    ? "white"
+                    : "#fecd514e",
+              }}
+              onClick={() => handleOpenChat(c.id, c.receiver)}
+            >
+              <img src={c.receiver.avatar || "/noavatar.png"} alt="" />
+              <span>{c.receiver.username}</span>
+              <p>{c.lastMessage}</p>
+            </div>
+          ))
+        ) : (
+          <div className="no-messages">
+            <p>No messages yet. Start a conversation!</p>
           </div>
-        ))}
+        )}
       </div>
       {chat && (
         <div className="chatBox">
           <div className="top">
             <div className="user">
-              <img src={chat.receiver.avatar || "noavatar.jpg"} alt="" />
+              <img src={chat.receiver.avatar || "noavatar.png"} alt="" />
               {chat.receiver.username}
             </div>
             <span className="close" onClick={() => setChat(null)}>
