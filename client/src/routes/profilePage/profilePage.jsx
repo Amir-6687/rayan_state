@@ -5,6 +5,7 @@ import apiRequest from "../../lib/apiRequest";
 import { Await, Link, useLoaderData, useNavigate } from "react-router-dom";
 import { Suspense, useContext } from "react";
 import { AuthContext } from "/src/context/AuthContext.jsx";
+import { ButtonCta } from "../../components/ui/button-shiny";
 
 function ProfilePage() {
   const data = useLoaderData();
@@ -45,7 +46,7 @@ function ProfilePage() {
             <span>
               E-mail: <b>{currentUser.email}</b>
             </span>
-            <button onClick={handleLogout}>Logout</button>
+            <ButtonCta label="Logout" onClick={handleLogout} className="w-fit" />
           </div>
           <div className="title">
             <h1>My List</h1>
