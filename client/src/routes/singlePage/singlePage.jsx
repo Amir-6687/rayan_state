@@ -35,6 +35,22 @@ function SinglePage() {
       return;
     }
 
+    console.log("Post object:", post);
+    console.log("Post user:", post.user);
+    console.log("Post user id:", post.user?.id);
+    console.log("Current user id:", currentUser.id);
+
+    if (!post.user?.id) {
+      console.error("Post user ID is missing!");
+      return;
+    }
+
+    // Check if user is trying to message themselves
+    if (currentUser.id === post.user.id) {
+      alert("You cannot send a message to yourself!");
+      return;
+    }
+
     try {
       // Create a new chat with the post owner
       const res = await apiRequest.post("/chats", { receiverId: post.user.id });
@@ -159,10 +175,17 @@ function SinglePage() {
             <Map items={[post]} />
           </div>
           <div className="buttons">
-            <button onClick={handleSendMessage}>
-              <img src="/chat.png" alt="" />
-              Send a Message
-            </button>
+            {currentUser && currentUser.id === post.user.id ? (
+              <button disabled style={{ opacity: 0.5, cursor: "not-allowed" }}>
+                <img src="/chat.png" alt="" />
+                Your Post
+              </button>
+            ) : (
+              <button onClick={handleSendMessage}>
+                <img src="/chat.png" alt="" />
+                Send a Message
+              </button>
+            )}
             <button
               onClick={handleSave}
               style={{

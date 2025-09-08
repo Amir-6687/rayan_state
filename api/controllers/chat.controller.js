@@ -2,6 +2,8 @@ import prisma from "../lib/prisma.js";
 
 export const getChats = async (req, res) => {
   const tokenUserId = req.userId;
+  
+  console.log("getChats - tokenUserId:", tokenUserId);
 
   try {
     const chats = await prisma.chat.findMany({
@@ -11,6 +13,8 @@ export const getChats = async (req, res) => {
         },
       },
     });
+
+    console.log("Found chats:", chats.length);
 
     for (const chat of chats) {
       const receiverId = chat.userIDs.find((id) => id !== tokenUserId);
@@ -34,9 +38,10 @@ export const getChats = async (req, res) => {
       chat.receiver = receiver || { id: "", username: "Unknown", avatar: "" };
     }
 
+    console.log("Processed chats:", chats);
     res.status(200).json(chats);
   } catch (err) {
-    console.log(err);
+    console.log("Error in getChats:", err);
     res.status(500).json({ message: "Failed to get chats!" });
   }
 };
@@ -81,7 +86,19 @@ export const getChat = async (req, res) => {
 export const addChat = async (req, res) => {
   const tokenUserId = req.userId;
   const receiverId = req.body.receiverId;
-
+  
+  console.log("addChat - tokenUserId:", tokenUserId);
+  console.log("addChat - receiverId:", receiverId);
+  
+  // Validate receiverId
+  if (!receiverId) {
+    return res.status(400).json({ message: "Receiver ID is required!" });
+  }
+  
+  if (tokenUserId === receiverId) {
+    return res.status(400).json({ message: "Cannot create chat with yourself!" });
+  }
+  
   try {
     // Check if chat already exists between these two users
     const existingChat = await prisma.chat.findFirst({
@@ -93,6 +110,7 @@ export const addChat = async (req, res) => {
     });
 
     if (existingChat) {
+      console.log("Existing chat found:", existingChat.id);
       return res.status(200).json(existingChat);
     }
 
@@ -103,7 +121,8 @@ export const addChat = async (req, res) => {
         seenBy: [tokenUserId], // Current user has seen the chat
       },
     });
-
+    
+    console.log("New chat created:", newChat.id);
     res.status(200).json(newChat);
   } catch (err) {
     console.log("Error creating chat:", err);
