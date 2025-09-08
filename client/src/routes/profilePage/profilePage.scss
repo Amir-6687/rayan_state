@@ -101,3 +101,19 @@
     }
   }
 }
+
+// Remove outline from ButtonCta
+:global(.group) {
+  outline: none !important;
+  box-shadow: none !important;
+
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  &:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
