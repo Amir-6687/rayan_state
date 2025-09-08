@@ -1,6 +1,4 @@
 import { useContext } from "react";
-import SearchBar from "../../components/searchBar/SearchBar";
-import AnimatedSearchBar from "../../components/searchBar/AnimatedSearchBar";
 import "./homePage.scss";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -20,15 +18,6 @@ function HomePage() {
             facilis id pariatur fugit quos laudantium temporibus dolor ea
             repellat provident impedit!
           </p>
-          <div className="search-container">
-            <AnimatedSearchBar
-              onSearch={(searchTerm) => {
-                console.log("Searching for:", searchTerm);
-                // Add search logic here
-              }}
-              placeholder="Search properties..."
-            />
-          </div>
           <div className="boxes">
             <div className="box">
               <h1>16+</h1>
