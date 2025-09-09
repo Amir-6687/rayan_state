@@ -45,7 +45,7 @@ export default function AboutSection3() {
   return (
     <section className="py-8 px-4 bg-[#09090b]" ref={heroRef}>
       <div className="max-w-6xl mx-auto">
-        <div className="relative">
+        <div className="relative" style={{ minHeight: "800px" }}>
           {/* Header with social icons */}
           <div className="flex justify-between items-center mb-8 w-[85%] absolute lg:top-4 md:top-0 sm:-top-2 -top-3 z-10">
             <div className="flex items-center gap-2 text-xl">
@@ -121,11 +121,12 @@ export default function AboutSection3() {
             timelineRef={heroRef}
             customVariants={scaleVariants}
             className="relative group"
+            style={{ height: "700px", marginTop: "-100px" }}
           >
             <svg
               className="w-full"
               width={"100%"}
-              height={"100%"}
+              height={"700px"}
               viewBox="0 0 100 40"
             >
               <defs>

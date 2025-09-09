@@ -2,6 +2,16 @@
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
+interface TimelineContentProps {
+  as?: React.ElementType;
+  children: React.ReactNode;
+  animationNum: number;
+  timelineRef: React.RefObject<HTMLElement>;
+  customVariants: any;
+  className?: string;
+  [key: string]: any;
+}
+
 export function TimelineContent({
   as: Component = "div",
   children,
@@ -10,9 +20,9 @@ export function TimelineContent({
   customVariants,
   className,
   ...props
-}) {
+}: TimelineContentProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
