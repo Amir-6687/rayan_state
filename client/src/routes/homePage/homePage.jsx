@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
 import { AuthContext } from "../../context/AuthContext";
 import { StardustButton } from "../../components/ui/stardust-button";
@@ -20,6 +21,7 @@ function HomePage() {
               facilis id pariatur fugit quos laudantium temporibus dolor ea
               repellat provident impedit!
             </p>
+            <SearchBar />
             <div className="boxes">
               <div className="box">
                 <h1>16+</h1>
