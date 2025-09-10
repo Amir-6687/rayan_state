@@ -205,21 +205,26 @@ function ContactPage() {
           baseHue={200}
           className="flex items-center flex-col justify-center px-4 md:px-10 py-8 w-full h-full"
         >
-          <h2 className="text-white text-3xl md:text-5xl font-bold text-center mb-6">
-            Ready to Find Your Dream Property?
-          </h2>
-          <p className="text-white text-lg md:text-xl max-w-2xl mt-4 text-center leading-relaxed">
-            Join thousands of satisfied clients who found their perfect home
-            with Ryan Real Estate. Our expert team is here to guide you through
-            every step of your property journey.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-6 mt-8">
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset] font-semibold">
-              Start Your Search
-            </button>
-            <button className="px-8 py-3 text-white border-2 border-white hover:bg-white hover:text-gray-900 transition duration-200 rounded-lg font-semibold">
-              Schedule Consultation
-            </button>
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="vortex-title text-4xl md:text-6xl lg:text-7xl font-extrabold text-center mb-8 leading-tight">
+              Ready to Find Your 
+              <span className="gradient-text"> Dream Property?</span>
+            </h2>
+            <p className="vortex-description text-xl md:text-2xl max-w-3xl mx-auto mt-6 text-center leading-relaxed font-light">
+              Join thousands of satisfied clients who found their perfect home with 
+              <span className="font-semibold text-blue-400"> Ryan Real Estate</span>. 
+              Our expert team is here to guide you through every step of your property journey.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-12">
+              <button className="vortex-btn-primary group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 rounded-2xl text-white font-bold text-lg shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative z-10">Start Your Search</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-300"></div>
+              </button>
+              <button className="vortex-btn-secondary group relative px-10 py-4 text-white border-2 border-white/30 hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 rounded-2xl font-bold text-lg shadow-xl hover:shadow-white/25 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative z-10">Schedule Consultation</span>
+                <div className="absolute inset-0 bg-white/5 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+              </button>
+            </div>
           </div>
         </Vortex>
       </div>
