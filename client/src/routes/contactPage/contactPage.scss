@@ -332,62 +332,99 @@
     position: relative;
     overflow: hidden;
     background-color: #09090b;
-    
+
     .vortex-title {
+      font-size: 4rem; // 96px - نصف 12rem
       text-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #e2e8f0 50%,
+        #cbd5e1 100%
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -0.02em;
-      
+
+      @include md {
+        font-size: 6rem; // 144px - نصف 18rem
+      }
+
+      @include lg {
+        font-size: 7rem; // 168px - نصف 21rem
+      }
+
       .gradient-text {
-        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        background: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #8b5cf6 50%,
+          #ec4899 100%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
       }
     }
-    
+
     .vortex-description {
+      font-size: 1.3rem; // 30% بزرگتر از text-xl (1.25rem)
       text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
       color: #e2e8f0;
       font-weight: 300;
       line-height: 1.7;
-      
+
+      @include md {
+        font-size: 1.56rem; // 30% بزرگتر از text-2xl (1.5rem)
+      }
+
       span {
         text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
       }
     }
-    
+
+    .vortex-buttons-container {
+      gap: 1.5rem; // 96px - فاصله زیاد بین دکمه‌ها
+
+      @include sm {
+        gap: 0.75rem; // 48px - فاصله کمتر در موبایل
+      }
+    }
+
     .vortex-btn-primary {
       position: relative;
       overflow: hidden;
       border: none;
       outline: none;
       cursor: pointer;
-      
+
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
         transition: left 0.5s;
       }
-      
+
       &:hover::before {
         left: 100%;
       }
-      
+
       &:active {
         transform: scale(0.98) translateY(-1px);
       }
     }
-    
+
     .vortex-btn-secondary {
       position: relative;
       overflow: hidden;
@@ -396,22 +433,27 @@
       backdrop-filter: blur(10px);
       outline: none;
       cursor: pointer;
-      
+
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
         transition: left 0.5s;
       }
-      
+
       &:hover::before {
         left: 100%;
       }
-      
+
       &:active {
         transform: scale(0.98) translateY(-1px);
       }

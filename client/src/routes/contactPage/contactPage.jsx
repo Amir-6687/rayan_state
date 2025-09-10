@@ -206,16 +206,23 @@ function ContactPage() {
           className="flex items-center flex-col justify-center px-4 md:px-10 py-8 w-full h-full"
         >
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="vortex-title text-4xl md:text-6xl lg:text-7xl font-extrabold text-center mb-8 leading-tight">
-              Ready to Find Your 
+            <h2 className="vortex-title font-extrabold text-center mb-8 leading-tight">
+              Ready to Find Your
               <span className="gradient-text"> Dream Property?</span>
             </h2>
-            <p className="vortex-description text-xl md:text-2xl max-w-3xl mx-auto mt-6 text-center leading-relaxed font-light">
-              Join thousands of satisfied clients who found their perfect home with 
-              <span className="font-semibold text-blue-400"> Ryan Real Estate</span>. 
-              Our expert team is here to guide you through every step of your property journey.
+            <p className="vortex-description max-w-3xl mx-auto mt-6 text-center leading-relaxed font-light">
+              Join thousands of satisfied clients who found their perfect home
+              with
+              <span className="font-semibold text-blue-400">
+                {" "}
+                Ryan Real Estate
+              </span>
+              .
+              <br />
+              Our expert team is here to guide you through every step of your
+              property journey.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-12">
+            <div className="vortex-buttons-container flex flex-row items-center justify-center mt-12">
               <button className="vortex-btn-primary group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 rounded-2xl text-white font-bold text-lg shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-translate-y-1">
                 <span className="relative z-10">Start Your Search</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-300"></div>
