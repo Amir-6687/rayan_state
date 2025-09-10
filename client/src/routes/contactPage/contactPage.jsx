@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./contactPage.scss";
+import { PulseBeams } from "../../components/ui/pulse-beams";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -171,9 +172,23 @@ function ContactPage() {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="submitBtn">
-                  Send Message
-                </button>
+                <PulseBeams
+                  gradientColors={{
+                    start: "#18CCFC",
+                    middle: "#6344F5",
+                    end: "#AE48FF",
+                  }}
+                  className="pulse-beams-wrapper"
+                  width={480}
+                  height={60}
+                >
+                  <button type="submit" className="pulse-button">
+                    <span className="pulse-button-bg"></span>
+                    <div className="pulse-button-content">
+                      <span className="pulse-button-text">Send Message</span>
+                    </div>
+                  </button>
+                </PulseBeams>
               </form>
             </div>
           </div>

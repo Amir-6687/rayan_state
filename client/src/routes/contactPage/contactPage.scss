@@ -214,4 +214,114 @@
       }
     }
   }
+
+  // PulseBeams container styling
+  .pulse-beams-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+
+    // Override PulseBeams default styles for form integration
+    .pulse-beams-wrapper {
+      height: auto !important;
+      width: 100% !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // Override PulseBeams styles for form integration
+  .pulse-beams-wrapper {
+    height: 60px !important;
+    width: 480px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  // Pulse Button Styling
+  .pulse-button {
+    background: #1e293b;
+    width: 480px;
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 40;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: white;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    .pulse-button-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 30px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 30px;
+        background: radial-gradient(
+          75% 100% at 50% 0%,
+          rgba(56, 189, 248, 0.6) 0%,
+          rgba(56, 189, 248, 0) 75%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+    }
+
+    &:hover .pulse-button-bg::before {
+      opacity: 1;
+    }
+
+    .pulse-button-content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 480px;
+      height: 60px;
+      z-index: 10;
+      border-radius: 30px;
+      background: #0f172a;
+      padding: 2px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      .pulse-button-text {
+        font-size: 24px;
+        font-weight: 600;
+        background: linear-gradient(to right, #d1d5db, #6b7280, #d1d5db);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+  }
 }
