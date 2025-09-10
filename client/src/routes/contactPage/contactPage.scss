@@ -393,70 +393,137 @@
       }
     }
 
-    .vortex-btn-primary {
-      position: relative;
-      overflow: hidden;
-      border: none;
-      outline: none;
-      cursor: pointer;
+    // Gradient Button Styles
+    .gradient-button {
+      position: relative !important;
+      appearance: none !important;
+      cursor: pointer !important;
+      background: radial-gradient(
+        150% 180.06% at 11.14% 140%,
+        #000 37.35%,
+        #08012c 61.36%,
+        #4e1e40 78.42%,
+        #70464e 89.52%,
+        #88394c 100%
+      ) !important;
+      border: none !important;
+      outline: none !important;
+      padding: 2rem 3rem !important;
+      min-height: 4rem !important;
+      overflow: hidden !important;
+      color: white !important;
+      font-weight: bold !important;
 
       &::before {
         content: "";
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          120.24% 103.18% at 0% 91.51%,
+          #c96287 0%,
+          #c66c64 8.8%,
+          #cc7d23 21.44%,
+          #37140a 71.34%,
+          #000 85.76%
         );
-        transition: left 0.5s;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        z-index: 1 !important;
+      }
+
+      span {
+        position: relative !important;
+        z-index: 10 !important;
+        color: white !important;
+        font-weight: bold !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
       }
 
       &:hover::before {
-        left: 100%;
+        opacity: 1;
       }
 
-      &:active {
-        transform: scale(0.98) translateY(-1px);
+      &:hover span {
+        color: white !important;
+        font-weight: bold !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
       }
     }
 
-    .vortex-btn-secondary {
-      position: relative;
-      overflow: hidden;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      outline: none;
-      cursor: pointer;
+    .gradient-button-variant {
+      background: radial-gradient(
+        150% 180.06% at 11.14% 140%,
+        #000022 37.35%,
+        #1f3f6d 61.36%,
+        #469396 78.42%,
+        #f1ffa5 89.52%,
+        #88394c 100%
+      ) !important;
+      border: none !important;
+      outline: none !important;
+      padding: 2rem 3rem !important;
+      min-height: 4rem !important;
+      overflow: hidden !important;
+      color: white !important;
+      font-weight: bold !important;
 
       &::before {
         content: "";
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          110.24% 110.2% at 0% 95.51%,
+          #000020 0%,
+          #f1ffa5 10%,
+          #469396 35.44%,
+          #1f3f6d 71.34%,
+          #000 90.76%
         );
-        transition: left 0.5s;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        z-index: 1 !important;
+      }
+
+      span {
+        position: relative !important;
+        z-index: 10 !important;
+        color: white !important;
+        font-weight: bold !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
       }
 
       &:hover::before {
-        left: 100%;
+        opacity: 1;
       }
 
-      &:active {
-        transform: scale(0.98) translateY(-1px);
+      &:hover span {
+        color: white !important;
+        font-weight: bold !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
       }
     }
+  }
+
+  // Force text styling with more specific selectors
+  .vortex-buttons-container .gradient-button > *,
+  .vortex-buttons-container .gradient-button-variant > * {
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .vortex-buttons-container .gradient-button:hover > *,
+  .vortex-buttons-container .gradient-button-variant:hover > * {
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
   }
 }

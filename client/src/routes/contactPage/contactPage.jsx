@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./contactPage.scss";
 import { PulseBeams } from "../../components/ui/pulse-beams";
 import { Vortex } from "../../components/ui/vortex";
+import { GradientButton } from "../../components/ui/gradient-button";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -223,14 +224,19 @@ function ContactPage() {
               property journey.
             </p>
             <div className="vortex-buttons-container flex flex-row items-center justify-center mt-12">
-              <button className="vortex-btn-primary group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 rounded-2xl text-white font-bold text-lg shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-translate-y-1">
-                <span className="relative z-10">Start Your Search</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-300"></div>
-              </button>
-              <button className="vortex-btn-secondary group relative px-10 py-4 text-white border-2 border-white/30 hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 rounded-2xl font-bold text-lg shadow-xl hover:shadow-white/25 transform hover:scale-105 hover:-translate-y-1">
-                <span className="relative z-10">Schedule Consultation</span>
-                <div className="absolute inset-0 bg-white/5 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
-              </button>
+              <GradientButton
+                className="px-12 py-8 text-lg font-bold"
+                onClick={() => alert("Search functionality coming soon!")}
+              >
+                Start Your Search
+              </GradientButton>
+              <GradientButton
+                variant="variant"
+                className="px-12 py-8 text-lg font-bold"
+                onClick={() => alert("Consultation booking coming soon!")}
+              >
+                Schedule Consultation
+              </GradientButton>
             </div>
           </div>
         </Vortex>
