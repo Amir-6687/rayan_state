@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./contactPage.scss";
 import { PulseBeams } from "../../components/ui/pulse-beams";
+import { Vortex } from "../../components/ui/vortex";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -193,6 +194,33 @@ function ContactPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Vortex Section */}
+      <div className="vortexSection">
+        <Vortex
+          backgroundColor="transparent"
+          rangeY={200}
+          particleCount={400}
+          baseHue={200}
+          className="flex items-center flex-col justify-center px-4 md:px-10 py-8 w-full h-full"
+        >
+          <h2 className="text-white text-3xl md:text-5xl font-bold text-center mb-6">
+            Ready to Find Your Dream Property?
+          </h2>
+          <p className="text-white text-lg md:text-xl max-w-2xl mt-4 text-center leading-relaxed">
+            Join thousands of satisfied clients who found their perfect home with Ryan Real Estate. 
+            Our expert team is here to guide you through every step of your property journey.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-6 mt-8">
+            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset] font-semibold">
+              Start Your Search
+            </button>
+            <button className="px-8 py-3 text-white border-2 border-white hover:bg-white hover:text-gray-900 transition duration-200 rounded-lg font-semibold">
+              Schedule Consultation
+            </button>
+          </div>
+        </Vortex>
       </div>
     </div>
   );
