@@ -67,14 +67,19 @@ export default function AboutSection3() {
               style={{ gap: "2rem" }}
             >
               <TimelineContent
-                as="a"
+                as="div"
                 animationNum={0}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                title="Follow us on Facebook"
+                onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <PiFacebookLogoThin
                   size={28}
@@ -82,14 +87,19 @@ export default function AboutSection3() {
                 />
               </TimelineContent>
               <TimelineContent
-                as="a"
+                as="div"
                 animationNum={1}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                title="Follow us on Instagram"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <PiInstagramLogoThin
                   size={28}
@@ -97,14 +107,19 @@ export default function AboutSection3() {
                 />
               </TimelineContent>
               <TimelineContent
-                as="a"
+                as="div"
                 animationNum={2}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                href="https://www.linkedin.com/naymur-rahman"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                title="Connect with us on LinkedIn"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <PiLinkedinLogoThin
                   size={28}
@@ -112,14 +127,19 @@ export default function AboutSection3() {
                 />
               </TimelineContent>
               <TimelineContent
-                as="a"
+                as="div"
                 animationNum={3}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                href="https://www.youtube.com/naymurweb"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                title="Subscribe to our YouTube channel"
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <PiYoutubeLogoThin
                   size={28}
@@ -254,7 +274,7 @@ export default function AboutSection3() {
 
             <TimelineContent
               as="div"
-              animationNum={9}
+              animationNum={8}
               timelineRef={heroRef}
               customVariants={revealVariants}
               className="grid md:grid-cols-2 gap-8 text-gray-400"
@@ -262,7 +282,7 @@ export default function AboutSection3() {
               <div className="flex gap-2" style={{ marginTop: "40px" }}>
                 <TimelineContent
                   as="div"
-                  animationNum={10}
+                  animationNum={9}
                   timelineRef={heroRef}
                   customVariants={revealVariants}
                   className="sm:text-base text-xs"
@@ -283,7 +303,7 @@ export default function AboutSection3() {
                 </TimelineContent>
                 <TimelineContent
                   as="div"
-                  animationNum={11}
+                  animationNum={9}
                   timelineRef={heroRef}
                   customVariants={revealVariants}
                   className="sm:text-base text-xs"
@@ -310,7 +330,7 @@ export default function AboutSection3() {
             <div className="text-right">
               <TimelineContent
                 as="div"
-                animationNum={12}
+                animationNum={10}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="text-2xl font-bold mb-2"
@@ -320,7 +340,7 @@ export default function AboutSection3() {
               </TimelineContent>
               <TimelineContent
                 as="div"
-                animationNum={13}
+                animationNum={11}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="text-xs mb-8"
@@ -335,7 +355,7 @@ export default function AboutSection3() {
 
               <TimelineContent
                 as="div"
-                animationNum={14}
+                animationNum={12}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="mb-6"
@@ -348,7 +368,7 @@ export default function AboutSection3() {
 
               <TimelineContent
                 as="button"
-                animationNum={15}
+                animationNum={13}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="flex w-fit ml-auto gap-2 transition-all duration-300 ease-in-out cursor-pointer font-semibold"
