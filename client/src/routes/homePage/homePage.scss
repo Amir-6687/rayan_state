@@ -91,3 +91,204 @@
     }
   }
 }
+
+// Properties Section
+.propertiesSection {
+  background-color: #09090b;
+  padding: 80px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+
+    @include sm {
+      font-size: 24px;
+    }
+  }
+
+  .propertiesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+
+    .propertyCard {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .propertyImage {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        .heartIcon {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          color: #666;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+          }
+        }
+
+        .price {
+          position: absolute;
+          bottom: 12px;
+          left: 12px;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+
+      .propertyInfo {
+        padding: 20px;
+
+        .propertyType {
+          font-size: 12px;
+          color: #9ca3af;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 8px;
+        }
+
+        .propertyDetails {
+          font-size: 14px;
+          color: #ffffff;
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+
+        .propertyDescription {
+          font-size: 14px;
+          color: #d1d5db;
+          line-height: 1.4;
+          margin-bottom: 12px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .location {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: #d1d5db;
+          margin-bottom: 12px;
+
+          .locationIcon {
+            margin-right: 6px;
+            font-size: 12px;
+          }
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+
+          .stars {
+            color: #ffc107;
+            font-size: 14px;
+            margin-right: 4px;
+          }
+
+          .reviews {
+            color: #9ca3af;
+            font-size: 12px;
+          }
+        }
+
+        .offerBtn {
+          width: 100%;
+          background: #8b5cf6;
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #7c3aed;
+            transform: translateY(-1px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+
+        // StardustButton styling
+        .pearl-button {
+          width: 100% !important;
+          font-size: 14px !important;
+
+          .wrap {
+            padding: 12px 20px !important;
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
+  }
+}

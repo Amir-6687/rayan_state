@@ -2,13 +2,15 @@
 
 .contactPage {
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background-color: #09090b;
 
   .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 100px 0;
     text-align: center;
+    border-radius: 20px;
+    margin: 20px;
 
     .container {
       max-width: 1200px;
@@ -63,7 +65,7 @@
         h2 {
           font-size: 32px;
           margin-bottom: 20px;
-          color: #333;
+          color: #ffffff;
 
           @include sm {
             font-size: 24px;
@@ -73,7 +75,7 @@
         p {
           font-size: 18px;
           line-height: 1.8;
-          color: #666;
+          color: #e5e7eb;
           margin-bottom: 40px;
 
           @include sm {
@@ -88,14 +90,16 @@
           .infoCard {
             display: flex;
             align-items: flex-start;
-            background: white;
+            background: #1f2937;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            border: 1px solid #374151;
 
             &:hover {
               transform: translateY(-2px);
+              background: #374151;
             }
 
             .icon {
@@ -108,11 +112,11 @@
               h3 {
                 font-size: 18px;
                 margin-bottom: 8px;
-                color: #333;
+                color: #ffffff;
               }
 
               p {
-                color: #666;
+                color: #d1d5db;
                 font-size: 16px;
                 line-height: 1.6;
                 margin: 0;
@@ -123,10 +127,11 @@
       }
 
       .contactForm {
-        background: white;
+        background: #1f2937;
         padding: 40px;
         border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        border: 1px solid #374151;
 
         @include sm {
           padding: 30px 20px;
@@ -135,7 +140,7 @@
         h2 {
           font-size: 28px;
           margin-bottom: 30px;
-          color: #333;
+          color: #ffffff;
           text-align: center;
 
           @include sm {
@@ -151,7 +156,7 @@
               display: block;
               margin-bottom: 8px;
               font-weight: 600;
-              color: #333;
+              color: #ffffff;
               font-size: 16px;
             }
 
@@ -160,19 +165,22 @@
             textarea {
               width: 100%;
               padding: 12px 16px;
-              border: 2px solid #e1e5e9;
+              border: 2px solid #4b5563;
               border-radius: 8px;
               font-size: 16px;
               transition: border-color 0.3s ease;
               font-family: inherit;
+              background-color: #374151;
+              color: #ffffff;
 
               &:focus {
                 outline: none;
                 border-color: #667eea;
+                background-color: #4b5563;
               }
 
               &::placeholder {
-                color: #999;
+                color: #9ca3af;
               }
             }
 
