@@ -46,8 +46,10 @@ export default function AboutSection3() {
     <section className="py-8 px-4 bg-[#09090b]" ref={heroRef}>
       <div className="max-w-6xl mx-auto">
         <div className="relative" style={{ minHeight: "800px" }}>
-          {/* Header with social icons */}
-          <div className="flex justify-between items-center mb-8 w-[85%] absolute lg:top-4 md:top-0 sm:-top-2 -top-3 z-10">
+          <div
+            className="flex justify-between items-center w-[85%] absolute z-50"
+            style={{ top: "110px" }} // 👈 اینو زیاد کن تا بیاد روی عکس
+          >
             <div className="flex items-center gap-2 text-xl">
               <span className="text-red-500 animate-spin">✱</span>
               <TimelineContent
@@ -61,7 +63,7 @@ export default function AboutSection3() {
               </TimelineContent>
             </div>
             <div
-              className="flex gap-12 sm:gap-8 lg:gap-16"
+              className="flex gap-12 sm:gap-8 lg:gap-16 relative z-50"
               style={{ gap: "2rem" }}
             >
               <TimelineContent
@@ -72,9 +74,12 @@ export default function AboutSection3() {
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer"
+                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
               >
-                <PiFacebookLogoThin size={28} className="text-gray-300" />
+                <PiFacebookLogoThin
+                  size={28}
+                  className="text-gray-300 hover:text-blue-500 transition-colors duration-300"
+                />
               </TimelineContent>
               <TimelineContent
                 as="a"
@@ -84,9 +89,12 @@ export default function AboutSection3() {
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer"
+                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
               >
-                <PiInstagramLogoThin size={28} className="text-gray-300" />
+                <PiInstagramLogoThin
+                  size={28}
+                  className="text-gray-300 hover:text-pink-500 transition-colors duration-300"
+                />
               </TimelineContent>
               <TimelineContent
                 as="a"
@@ -96,9 +104,12 @@ export default function AboutSection3() {
                 href="https://www.linkedin.com/naymur-rahman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer"
+                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
               >
-                <PiLinkedinLogoThin size={28} className="text-gray-300" />
+                <PiLinkedinLogoThin
+                  size={28}
+                  className="text-gray-300 hover:text-blue-600 transition-colors duration-300"
+                />
               </TimelineContent>
               <TimelineContent
                 as="a"
@@ -108,9 +119,12 @@ export default function AboutSection3() {
                 href="https://www.youtube.com/naymurweb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer"
+                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300"
               >
-                <PiYoutubeLogoThin size={28} className="text-gray-300" />
+                <PiYoutubeLogoThin
+                  size={28}
+                  className="text-gray-300 hover:text-red-500 transition-colors duration-300"
+                />
               </TimelineContent>
             </div>
           </div>
@@ -120,20 +134,17 @@ export default function AboutSection3() {
             animationNum={4}
             timelineRef={heroRef}
             customVariants={scaleVariants}
-            className="relative group"
-            style={{ height: "700px", marginTop: "-100px" }}
+            className="relative"
+            style={{ height: "700px", marginTop: "-100px", zIndex: 1 }}
           >
             <svg
               className="w-full"
-              width={"100%"}
-              height={"700px"}
+              width="100%"
+              height="700px"
               viewBox="0 0 100 40"
             >
               <defs>
-                <clipPath
-                  id="clip-inverted"
-                  clipPathUnits={"objectBoundingBox"}
-                >
+                <clipPath id="clip-inverted" clipPathUnits="objectBoundingBox">
                   <path
                     d="M0.0998072 1H0.422076H0.749756C0.767072 1 0.774207 0.961783 0.77561 0.942675V0.807325C0.777053 0.743631 0.791844 0.731953 0.799059 0.734076H0.969813C0.996268 0.730255 1.00088 0.693206 0.999875 0.675159V0.0700637C0.999875 0.0254777 0.985045 0.00477707 0.977629 0H0.902473C0.854975 0 0.890448 0.138535 0.850165 0.138535H0.0204424C0.00408849 0.142357 0 0.180467 0 0.199045V0.410828C0 0.449045 0.0136283 0.46603 0.0204424 0.469745H0.0523086C0.0696245 0.471019 0.0735527 0.497877 0.0733523 0.511146V0.915605C0.0723903 0.983121 0.090588 1 0.0998072 1Z"
                     fill="#D9D9D9"
@@ -143,14 +154,13 @@ export default function AboutSection3() {
               <image
                 clipPath="url(#clip-inverted)"
                 preserveAspectRatio="xMidYMid slice"
-                width={"100%"}
-                height={"100%"}
+                width="100%"
+                height="100%"
                 xlinkHref="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&auto=format&fit=crop"
-              ></image>
+              />
             </svg>
           </TimelineContent>
 
-          {/* Stats */}
           <div className="flex flex-wrap lg:justify-start justify-between items-center py-3 text-sm">
             <TimelineContent
               as="div"
@@ -219,7 +229,7 @@ export default function AboutSection3() {
             </div>
           </div>
         </div>
-        {/* Main Content */}
+
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <h1
