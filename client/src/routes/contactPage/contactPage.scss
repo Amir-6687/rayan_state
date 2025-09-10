@@ -331,8 +331,8 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    
+    background-color: #09090b;
+
     h2 {
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       background: linear-gradient(45deg, #ffffff, #e2e8f0);
@@ -340,16 +340,16 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
+
     p {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       color: #e2e8f0;
     }
-    
+
     button {
       transition: all 0.3s ease;
       transform: translateY(0);
-      
+
       &:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);

@@ -209,8 +209,9 @@ function ContactPage() {
             Ready to Find Your Dream Property?
           </h2>
           <p className="text-white text-lg md:text-xl max-w-2xl mt-4 text-center leading-relaxed">
-            Join thousands of satisfied clients who found their perfect home with Ryan Real Estate. 
-            Our expert team is here to guide you through every step of your property journey.
+            Join thousands of satisfied clients who found their perfect home
+            with Ryan Real Estate. Our expert team is here to guide you through
+            every step of your property journey.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-6 mt-8">
             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset] font-semibold">
