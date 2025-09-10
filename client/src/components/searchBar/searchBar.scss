@@ -3,93 +3,237 @@
 .searchBar {
   position: relative;
   z-index: 1;
-  .type {
-    button {
-      padding: 16px 36px;
-      border: 1px solid #999;
-      border-bottom: none;
-      cursor: pointer;
-      background-color: white;
-      text-transform: capitalize;
+  margin: 40px 0;
 
-      &.active {
-        background-color: black;
+  .searchContainer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .typeSelector {
+      display: flex;
+      margin-bottom: 16px;
+      background: #f8f9fa;
+      border-radius: 16px;
+      padding: 4px;
+
+      .typeBtn {
+        flex: 1;
+        padding: 12px 24px;
+        border: none;
+        background: transparent;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        color: #6b7280;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:hover {
+          color: #374151;
+          background: rgba(255, 255, 255, 0.5);
+        }
+
+        &.active {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+          transform: translateY(-1px);
+        }
+      }
+    }
+
+    .searchForm {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+
+      @include md {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .inputGroup {
+        flex: 2;
+        min-width: 250px;
+
+        @include md {
+          width: 100%;
+          min-width: auto;
+        }
+
+        .inputWrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          .searchInput {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s ease;
+            outline: none;
+
+            &:focus {
+              border-color: #667eea;
+              box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+
+            &::placeholder {
+              color: #6b7280;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .priceGroup {
+        display: flex;
+        gap: 8px;
+        flex: 1;
+        min-width: 200px;
+
+        @include md {
+          width: 100%;
+          min-width: auto;
+        }
+
+        @include sm {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .inputWrapper {
+          position: relative;
+          flex: 1;
+          min-width: 90px;
+
+          .priceInput {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s ease;
+            outline: none;
+            min-width: 90px;
+
+            &:focus {
+              border-color: #667eea;
+              box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+
+            &::placeholder {
+              color: #6b7280;
+              font-weight: 500;
+              font-size: 15px;
+            }
+
+            // Hide spinner completely
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            // Firefox - hide spinner
+            &[type="number"] {
+              -moz-appearance: textfield;
+            }
+          }
+        }
+      }
+
+      .searchButton {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-      }
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        border: none;
+        cursor: pointer;
+        min-width: 140px;
+        justify-content: center;
 
-      &:first-child {
-        border-top-left-radius: 5px;
-        border-right: none;
-      }
-      &:last-child {
-        border-top-right-radius: 5px;
-        border-left: none;
+        @include md {
+          width: 100%;
+          min-width: auto;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+          background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+
+        .searchIcon {
+          width: 20px;
+          height: 20px;
+          stroke-width: 2;
+        }
+
+        span {
+          font-weight: 600;
+        }
       }
     }
   }
+}
 
-  form {
-    border: 1px solid #999;
-    display: flex;
-    justify-content: space-between;
-    height: 64px;
-    gap: 5px;
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .searchBar {
+    .searchContainer {
+      background: rgba(31, 41, 55, 0.95);
+      border: 1px solid rgba(75, 85, 99, 0.3);
 
-    @include sm {
-      flex-direction: column;
-      border: none;
-    }
+      .typeSelector {
+        background: #374151;
 
-    input {
-      border: none;
-      padding: 0px 10px;
-      width: 200px;
+        .typeBtn {
+          color: #d1d5db;
 
-      @include lg {
-        padding: 0px 5px;
-
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: 140px;
-        }
-      }
-      @include md {
-        width: 200px;
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: 200px;
+          &:hover {
+            color: #f9fafb;
+            background: rgba(75, 85, 99, 0.5);
+          }
         }
       }
 
-      @include sm {
-        width: auto;
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: auto;
-        }
-        padding: 20px;
-        border: 1px solid #999;
-      }
-    }
-    a {
-      flex: 1;
-      background-color: #fece51;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .searchForm {
+        .inputGroup .inputWrapper .searchInput,
+        .priceGroup .inputWrapper .priceInput {
+          background: #374151;
+          border-color: #4b5563;
+          color: #f9fafb;
 
-      button {
-        border: none;
-        cursor: pointer;
-        background-color: #fece51;
+          &:focus {
+            border-color: #667eea;
+          }
 
-        @include sm {
-          padding: 10px;
-        }
-
-        img {
-          width: 24px;
-          height: 24px;
+          &::placeholder {
+            color: #d1d5db;
+            font-weight: 500;
+          }
         }
       }
     }
