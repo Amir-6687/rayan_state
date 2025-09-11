@@ -158,8 +158,87 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-left: 1px solid #404040;
+    padding: 20px;
+
+    .uploadSection {
+      width: 100%;
+      max-width: 400px;
+
+      .uploadTitle {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      // Override ImageUploadDemo styles for dark theme
+      .w-full {
+        background-color: #2d2d2d !important;
+        border-color: #404040 !important;
+        margin: 30px 0 !important; // فاصله بالا و پایین
+        padding: 0 20px !important; // فاصله چپ و راست
+
+        .text-lg {
+          color: white !important;
+          margin-top: 30px !important; // فاصله از خط بالای باکس
+        }
+
+        .text-sm {
+          color: #e0e0e0 !important;
+          margin-top: 15px !important; // فاصله از خط بالای باکس
+        }
+
+        .text-muted-foreground {
+          color: #888 !important;
+        }
+
+        .border-dashed {
+          border-color: #404040 !important;
+          background-color: #1a1a1a !important;
+          height: 400px !important; // افزایش ارتفاع
+          margin: 20px 0 !important; // فاصله بالا و پایین
+
+          &:hover {
+            background-color: #2d2d2d !important;
+            border-color: #4a9eff !important;
+          }
+        }
+
+        .bg-muted {
+          background-color: #1a1a1a !important;
+        }
+
+        .bg-background {
+          background-color: #2d2d2d !important;
+        }
+
+        .text-muted-foreground {
+          color: #888 !important;
+        }
+
+        .border {
+          border-color: #404040 !important;
+        }
+
+        .hover\\:bg-muted:hover {
+          background-color: #2d2d2d !important;
+        }
+
+        // افزایش ارتفاع برای preview
+        .group.relative {
+          height: 400px !important;
+          margin: 20px 0 !important; // فاصله بالا و پایین
+        }
+
+        // فاصله بین عناصر داخلی
+        .space-y-6 {
+          gap: 40px !important; // فاصله بیشتر بین عناصر
+        }
+      }
+    }
 
     img {
       width: 50%;

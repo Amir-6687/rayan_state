@@ -3,12 +3,13 @@ import "./newPostPage.scss";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import apiRequest from "../../lib/apiRequest";
-import CloudinaryUploadWidget from "../../components/uploadWidget/uploadWidget";
+import { ImageUploadDemo } from "../../components/ui/image-upload-demo";
 import { useNavigate } from "react-router-dom";
 
 function NewPostPage() {
   const [value, setValue] = useState("");
   const [images, setImages] = useState([]);
+  const [uploadedImages, setUploadedImages] = useState([]);
 
   const [error, setError] = useState("");
 
@@ -157,18 +158,16 @@ function NewPostPage() {
         </div>
       </div>
       <div className="sideContainer">
-        {images.map((image, index) => (
+        <div className="uploadSection">
+          <h3 className="uploadTitle">Upload Images</h3>
+          <ImageUploadDemo onUpload={(urls) => setUploadedImages(urls)} />
+        </div>
+        {uploadedImages.map((image, index) => (
           <img src={image} key={index} alt="post" />
         ))}
-        <CloudinaryUploadWidget
-          uwConfig={{
-            multiple: true,
-            cloudName: "dm7su2dhx",
-            uploadPreset: "amirestate",
-            folder: "posts",
-          }}
-          setState={setImages}
-        />
+        {images.map((image, index) => (
+          <img src={image} key={`old-${index}`} alt="post" />
+        ))}
       </div>
     </div>
   );
