@@ -1,7 +1,8 @@
 import axios from "axios";
+import { API_URL } from "../config";
 
 const apiRequest = axios.create({
-  baseURL: "http://localhost:8800/api",
+  baseURL: `${API_URL}/api`,
   withCredentials: true,
 });
 
@@ -16,7 +17,7 @@ apiRequest.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 export default apiRequest;
