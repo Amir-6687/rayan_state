@@ -28,10 +28,12 @@ app.use(
       "http://192.168.178.183:5173",
       "http://192.168.178.183:5174",
       "http://192.168.178.183:5175",
+      "https://rayan-state.onrender.com",
     ],
     credentials: true,
   }),
 );
+
 app.use(express.json());
 app.use(cookieParser());
 
