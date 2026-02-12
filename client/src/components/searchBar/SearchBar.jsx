@@ -53,7 +53,6 @@ function SearchBar() {
               <input
                 type="number"
                 name="minPrice"
-                الا
                 min={0}
                 max={10000000}
                 placeholder="Min €"
