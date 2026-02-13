@@ -60,35 +60,36 @@ export function Footer() {
         className="w-full"
         style={{
           display: "flex",
-          flexDirection: "row",
-          gap: "32px",
-          marginLeft: "30%",
-          marginRight: "30%",
+          flexDirection: window.innerWidth < 738 ? "column" : "row",
+          gap: window.innerWidth < 738 ? "20px" : "32px",
+          marginLeft: window.innerWidth < 738 ? "0" : "30%",
+          marginRight: window.innerWidth < 738 ? "0" : "30%",
         }}
       >
         <AnimatedContainer
           className="space-y-4"
           style={{
-            width: "20%",
+            width: window.innerWidth < 738 ? "100%" : "20%",
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-end",
-            marginRight: "50px",
-            transform: "translateX(70px)",
+            alignItems: window.innerWidth < 738 ? "center" : "flex-end",
+            marginRight: window.innerWidth < 738 ? "0" : "50px",
+            transform: window.innerWidth < 738 ? "none" : "translateX(70px)",
           }}
         >
           <FrameIcon
             className="size-8"
-            style={{ transform: "translateX(150px)" }}
+            style={{
+              transform: window.innerWidth < 738 ? "none" : "translateX(150px)",
+            }}
           />
           <p
             className="text-muted-foreground mt-8 text-sm md:mt-0"
             style={{
               fontSize: "10px",
-              whiteSpace: "nowrap",
-              textAlign: "right !important",
-              textAlign: "right",
-              transform: "translateX(150px)",
+              whiteSpace: window.innerWidth < 738 ? "normal" : "nowrap",
+              textAlign: window.innerWidth < 738 ? "center" : "right",
+              transform: window.innerWidth < 738 ? "none" : "translateX(150px)",
             }}
           >
             © {new Date().getFullYear()} EstateApp. All rights reserved.
@@ -96,13 +97,13 @@ export function Footer() {
         </AnimatedContainer>
 
         <div
-          className="mt-10 xl:mt-0"
+          className="mt-10 xl:mt-0 w-full"
           style={{
-            width: "80%",
+            width: window.innerWidth < 738 ? "100%" : "80%",
             display: "flex",
-            flexDirection: "row",
-            gap: "120px",
-            marginLeft: "300px",
+            flexDirection: window.innerWidth < 738 ? "column" : "row",
+            gap: window.innerWidth < 738 ? "20px" : "120px",
+            marginLeft: window.innerWidth < 738 ? "0" : "300px",
           }}
         >
           {footerLinks.map((section, index) => (
@@ -110,10 +111,10 @@ export function Footer() {
               <div
                 className="mb-10 md:mb-0"
                 style={{
-                  width: "25%",
+                  width: window.innerWidth < 738 ? "100%" : "25%",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "flex-start",
+                  alignItems: window.innerWidth < 738 ? "center" : "flex-start",
                 }}
               >
                 <h3
@@ -122,9 +123,8 @@ export function Footer() {
                     fontSize: "12px",
                     fontWeight: "bold",
                     whiteSpace: "nowrap",
-                    textAlign: "left !important",
-                    textAlign: "left",
-                    marginLeft: "10px",
+                    textAlign: window.innerWidth < 738 ? "center" : "left",
+                    marginLeft: window.innerWidth < 738 ? "0" : "10px",
                   }}
                 >
                   {section.label}
@@ -137,9 +137,10 @@ export function Footer() {
                     display: "flex",
                     flexDirection: "column",
                     gap: "8px",
-                    whiteSpace: "nowrap",
+                    whiteSpace: window.innerWidth < 738 ? "normal" : "nowrap",
                     marginTop: "20px",
-                    marginLeft: "25px",
+                    marginLeft: window.innerWidth < 738 ? "0" : "25px",
+                    textAlign: window.innerWidth < 738 ? "center" : "left",
                   }}
                 >
                   {section.links.map((link) => (
