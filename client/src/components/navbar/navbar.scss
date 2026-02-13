@@ -199,8 +199,8 @@ nav {
     .menu {
       position: fixed;
       top: 0;
-      right: -80%;
-      width: 80%;
+      right: 0;
+      width: 60%;
       height: 100vh;
       background-color: rgba(9, 9, 11, 0.98);
       color: white;
@@ -209,11 +209,12 @@ nav {
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      transition: right 0.4s ease;
+      transition: transform 0.4s ease;
+      transform: translateX(100%);
       z-index: 999999;
 
       &.active {
-        right: 0;
+        transform: translateX(0);
       }
 
       @include sm {
