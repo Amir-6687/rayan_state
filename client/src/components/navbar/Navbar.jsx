@@ -48,6 +48,13 @@ function Navbar() {
               </Link>
             </>
           )}
+          <div className="menuIcon">
+            <img
+              src="/menu.png"
+              alt="menu"
+              onClick={() => setOpen((prev) => !prev)}
+            />
+          </div>
         </div>
       </nav>
       {typeof document !== "undefined" &&
