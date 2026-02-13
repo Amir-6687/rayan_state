@@ -80,6 +80,12 @@ io.on("connection", (socket) => {
 // PORT
 const PORT = process.env.PORT || 8800;
 
-server.listen(PORT, "0.0.0.0", () => {
-  console.log("Server running on port", PORT);
-});
+server
+  .listen(PORT, "0.0.0.0", () => {
+    console.log("✅ Server running on port", PORT);
+    console.log("Allowed Origins:", allowedOrigins);
+  })
+  .on("error", (err) => {
+    console.error("❌ Server error:", err);
+    process.exit(1);
+  });
