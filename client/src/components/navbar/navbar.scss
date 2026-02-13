@@ -197,25 +197,26 @@ nav {
     }
 
     .menu {
-      position: fixed;
+      position: fixed; // مهم
       top: 0;
-      right: -50%; // منو بیرون صفحه، سمت راست
+      right: -50%;
       width: 50%;
       height: 100vh;
       background-color: #09090b;
       color: white;
-      display: flex; // همیشه flex باشد
+      display: flex; // همیشه flex
       flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      transition: right 0.5s ease; // فقط right انیمیت شود
-      opacity: 0; // مخفی
-      pointer-events: none; // کلیک‌پذیر نباشد
+      transition: right 0.5s ease;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999; // مهم‌ترین بخش
 
       &.active {
-        right: 0; // وارد صفحه شود
-        opacity: 1; // دیده شود
+        right: 0;
+        opacity: 1;
         pointer-events: auto;
       }
 
