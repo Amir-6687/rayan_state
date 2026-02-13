@@ -23,7 +23,7 @@ function Navbar() {
         <div className="left">
           <a href="/" className="logo">
             <img src="/logo.png" alt="" />
-            <span>LamaEstate</span>
+            <span>Rayan State</span>
           </a>
           <a href="/">Home</a>
           <a href="/about">About</a>
@@ -48,6 +48,17 @@ function Navbar() {
               </Link>
             </>
           )}
+        </div>
+      </nav>
+      {typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className={open ? "menu active" : "menu"}
+            onClick={(e) => {
+              // close when clicking on overlay (outside .menuInner)
+              if (e.target === e.currentTarget) setOpen(false);
+            }}
+          >
             <div className="menuInner">
               <div className="menuLinks">
                 <Link to="/" onClick={() => setOpen(false)}>
@@ -84,32 +95,6 @@ function Navbar() {
                   <Link to="/profile">{currentUser.username || "Profile"}</Link>
                 </div>
               )}
-            </div>
-            className={open ? "menu active" : "menu"}
-            onClick={(e) => {
-              // close when clicking on overlay (outside .menuInner)
-              if (e.target === e.currentTarget) setOpen(false);
-            }}
-          >
-            <div className="menuInner">
-              <Link to="/" onClick={() => setOpen(false)}>
-                Home
-              </Link>
-              <Link to="/about" onClick={() => setOpen(false)}>
-                About
-              </Link>
-              <Link to="/contact" onClick={() => setOpen(false)}>
-                Contact
-              </Link>
-              <Link to="/agents" onClick={() => setOpen(false)}>
-                Agents
-              </Link>
-              <Link to="/login" onClick={() => setOpen(false)}>
-                Sign in
-              </Link>
-              <Link to="/register" onClick={() => setOpen(false)}>
-                Sign up
-              </Link>
             </div>
           </div>,
           document.body,
