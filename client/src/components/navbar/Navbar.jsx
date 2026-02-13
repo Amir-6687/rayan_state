@@ -89,7 +89,8 @@ function Navbar() {
               </div>
 
               {currentUser && (
-                <div
+                <Link
+                  to="/profile"
                   className="menuFooter"
                   onClick={() => {
                     setOpen(false);
@@ -99,8 +100,8 @@ function Navbar() {
                     src={currentUser.avatar || "/noavatar.png"}
                     alt="avatar"
                   />
-                  <Link to="/profile">{currentUser.username || "Profile"}</Link>
-                </div>
+                  <span>{currentUser.username || "Profile"}</span>
+                </Link>
               )}
             </div>
           </div>,

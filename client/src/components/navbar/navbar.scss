@@ -227,14 +227,14 @@ nav {
   .menuInner {
     width: 60%;
     max-width: 420px;
-    height: 100%;
+    height: auto;
     margin-left: auto;
     background-color: #09090b;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 24px 12px;
+    justify-content: flex-start;
+    padding: 40px 12px;
     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.5);
   }
 
@@ -258,13 +258,15 @@ nav {
   }
 
   .menuFooter {
-    width: 100%;
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 14px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    width: 100%;
   }
 
   .menuFooter img {
@@ -274,10 +276,9 @@ nav {
     object-fit: cover;
   }
 
-  .menuFooter a {
+  .menuFooter span {
     color: #fff;
     font-weight: 700;
-    text-decoration: none;
   }
 
   &.active {
