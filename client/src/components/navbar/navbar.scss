@@ -210,10 +210,14 @@ nav {
       justify-content: center;
       font-size: 24px;
       transition: right 0.4s ease;
-      z-index: 9999;
+      z-index: 999999; // خیلی مهم
+      pointer-events: none;
+      opacity: 0;
 
       &.active {
         right: 0;
+        opacity: 1;
+        pointer-events: auto;
       }
 
       @include sm {
