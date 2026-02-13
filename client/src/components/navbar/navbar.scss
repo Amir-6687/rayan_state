@@ -197,36 +197,59 @@ nav {
     }
   }
 
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(9, 9, 11, 0.98);
-    color: white;
+  /* menu moved to root level (styles appended after nav) */
+}
+
+/* root-level menu (overlay) and sliding panel */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(9, 9, 11, 0.6); /* semi-transparent overlay */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  font-size: 24px;
+  transition:
+    right 0.4s ease,
+    opacity 0.3s ease;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+
+  /* inner sliding panel aligned to the right while overlay covers full viewport */
+  .menuInner {
+    width: 60%;
+    max-width: 420px;
+    height: 100%;
+    margin-left: auto;
+    background-color: #09090b;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    transition: right 0.4s ease;
-    z-index: 9999;
-
-    a {
-      display: none;
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-      padding: 20px 0;
-      font-size: 18px;
-
-      @include sm {
-        display: initial;
-      }
-    }
+    padding: 40px 20px;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.5);
   }
-  .menu.active {
+
+  .menuInner a {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    padding: 18px 0;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &.active {
     right: 0;
+    opacity: 1;
+    pointer-events: auto;
   }
 }

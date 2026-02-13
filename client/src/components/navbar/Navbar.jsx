@@ -3,6 +3,7 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useNotificationStore } from "../../lib/notificationStore";
+import { createPortal } from "react-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,52 +18,61 @@ function Navbar() {
   }, [currentUser, fetch]);
 
   return (
-    <nav>
-      <div className="left">
-        <a href="/" className="logo">
-          <img src="/logo.png" alt="" />
-          <span>LamaEstate</span>
-        </a>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/agents">Agents</a>
-      </div>
-      <div className="right">
-        {currentUser ? (
-          <div className="user">
-            <img src={currentUser.avatar || "/noavatar.png"} alt="" />
-            <span>{currentUser.username}</span>
-            <Link to="/profile" className="profile">
-              {number > 0 && <div className="notification">{number}</div>}
-              <span>Profile</span>
-            </Link>
-          </div>
-        ) : (
-          <>
-            <Link to="/login">Sign in</Link>
-            <Link to="/register" className="register">
-              Sign up
-            </Link>
-          </>
-        )}
-        <div className="menuIcon">
-          <img
-            src="/menu.png"
-            alt=""
-            onClick={() => setOpen((prev) => !prev)}
-          />
+    <>
+      <nav>
+        <div className="left">
+          <a href="/" className="logo">
+            <img src="/logo.png" alt="" />
+            <span>LamaEstate</span>
+          </a>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/agents">Agents</a>
         </div>
-      </div>
-      <div className={open ? "menu active" : "menu"}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/agents">Agents</Link>
-        <Link to="/login">Sign in</Link>
-        <Link to="/register">Sign up</Link>
-      </div>
-    </nav>
+        <div className="right">
+          {currentUser ? (
+            <div className="user">
+              <img src={currentUser.avatar || "/noavatar.png"} alt="" />
+              <span>{currentUser.username}</span>
+              <Link to="/profile" className="profile">
+                {number > 0 && <div className="notification">{number}</div>}
+                <span>Profile</span>
+              </Link>
+            </div>
+          ) : (
+            <>
+              <Link to="/login">Sign in</Link>
+              <Link to="/register" className="register">
+                Sign up
+              </Link>
+            </>
+          )}
+          <div className="menuIcon">
+            <img
+              src="/menu.png"
+              alt=""
+              onClick={() => setOpen((prev) => !prev)}
+            />
+          </div>
+        </div>
+      </nav>
+      {typeof document !== "undefined" &&
+        createPortal(
+          <div className={open ? "menu active" : "menu"}>
+            <div className="menuInner">
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/contact">Contact</Link>
+              <Link to="/agents">Agents</Link>
+              <Link to="/login">Sign in</Link>
+              <Link to="/register">Sign up</Link>
+            </div>
+          </div>,
+          document.body,
+        )}
+      {/* end portal */}
+    </>
   );
 }
 
