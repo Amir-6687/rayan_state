@@ -53,14 +53,14 @@ function Navbar() {
             onClick={() => setOpen((prev) => !prev)}
           />
         </div>
-        <div className={open ? "menu active" : "menu"}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/agents">Agents</Link>
-          <Link to="/login">Sign in</Link>
-          <Link to="/register">Sign up</Link>
-        </div>
+      </div>
+      <div className={open ? "menu active" : "menu"}>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/agents">Agents</Link>
+        <Link to="/login">Sign in</Link>
+        <Link to="/register">Sign up</Link>
       </div>
     </nav>
   );
