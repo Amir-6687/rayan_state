@@ -21,15 +21,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "http://localhost:5175",
-      "http://192.168.178.183:5173",
-      "http://192.168.178.183:5174",
-      "http://192.168.178.183:5175",
-      "https://rayan-state.onrender.com",
-    ],
+    origin: ["http://localhost:5173", "https://rayan-state.vercel.app"],
     credentials: true,
   }),
 );
