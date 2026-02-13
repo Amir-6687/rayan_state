@@ -48,18 +48,43 @@ function Navbar() {
               </Link>
             </>
           )}
-          <div className="menuIcon">
-            <img
-              src="/menu.png"
-              alt=""
-              onClick={() => setOpen((prev) => !prev)}
-            />
-          </div>
-        </div>
-      </nav>
-      {typeof document !== "undefined" &&
-        createPortal(
-          <div
+            <div className="menuInner">
+              <div className="menuLinks">
+                <Link to="/" onClick={() => setOpen(false)}>
+                  Home
+                </Link>
+                <Link to="/about" onClick={() => setOpen(false)}>
+                  About
+                </Link>
+                <Link to="/contact" onClick={() => setOpen(false)}>
+                  Contact
+                </Link>
+                <Link to="/agents" onClick={() => setOpen(false)}>
+                  Agents
+                </Link>
+                <Link to="/login" onClick={() => setOpen(false)}>
+                  Sign in
+                </Link>
+                <Link to="/register" onClick={() => setOpen(false)}>
+                  Sign up
+                </Link>
+              </div>
+
+              {currentUser && (
+                <div
+                  className="menuFooter"
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                >
+                  <img
+                    src={currentUser.avatar || "/noavatar.png"}
+                    alt="avatar"
+                  />
+                  <Link to="/profile">{currentUser.username || "Profile"}</Link>
+                </div>
+              )}
+            </div>
             className={open ? "menu active" : "menu"}
             onClick={(e) => {
               // close when clicking on overlay (outside .menuInner)

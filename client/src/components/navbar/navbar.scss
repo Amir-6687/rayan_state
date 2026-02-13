@@ -233,9 +233,17 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    justify-content: space-between;
+    padding: 24px 12px;
     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .menuLinks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 
   .menuInner a {
@@ -243,10 +251,33 @@ nav {
     cursor: pointer;
     text-decoration: none;
     color: white;
-    padding: 18px 0;
+    padding: 12px 0;
     font-size: 20px;
     width: 100%;
     text-align: center;
+  }
+
+  .menuFooter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    box-sizing: border-box;
+  }
+
+  .menuFooter img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .menuFooter a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
   }
 
   &.active {
