@@ -10,7 +10,6 @@ export const getPosts = async (req, res) => {
         city: query.city || undefined,
         type: query.type || undefined,
         property: query.property || undefined,
-        property: query.property || undefined,
         bedroom: parseInt(query.bedroom) || undefined,
         price: {
           gte: parseInt(query.minPrice) || 0,
@@ -67,7 +66,7 @@ export const getPost = async (req, res) => {
           });
 
           return res.status(200).json({ ...post, isSaved: !!saved });
-        }
+        },
       );
     }
 
