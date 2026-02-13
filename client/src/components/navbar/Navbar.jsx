@@ -59,14 +59,32 @@ function Navbar() {
       </nav>
       {typeof document !== "undefined" &&
         createPortal(
-          <div className={open ? "menu active" : "menu"}>
+          <div
+            className={open ? "menu active" : "menu"}
+            onClick={(e) => {
+              // close when clicking on overlay (outside .menuInner)
+              if (e.target === e.currentTarget) setOpen(false);
+            }}
+          >
             <div className="menuInner">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
-              <Link to="/agents">Agents</Link>
-              <Link to="/login">Sign in</Link>
-              <Link to="/register">Sign up</Link>
+              <Link to="/" onClick={() => setOpen(false)}>
+                Home
+              </Link>
+              <Link to="/about" onClick={() => setOpen(false)}>
+                About
+              </Link>
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Contact
+              </Link>
+              <Link to="/agents" onClick={() => setOpen(false)}>
+                Agents
+              </Link>
+              <Link to="/login" onClick={() => setOpen(false)}>
+                Sign in
+              </Link>
+              <Link to="/register" onClick={() => setOpen(false)}>
+                Sign up
+              </Link>
             </div>
           </div>,
           document.body,

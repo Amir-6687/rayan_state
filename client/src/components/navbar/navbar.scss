@@ -183,12 +183,14 @@ nav {
 
     .menuIcon {
       display: none;
-      z-index: 999;
+      z-index: 10001; /* above overlay */
 
       img {
         width: 36px;
         height: 36px;
         cursor: pointer;
+        position: relative;
+        z-index: 10002;
       }
 
       @include sm {
