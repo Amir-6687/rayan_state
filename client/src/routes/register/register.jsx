@@ -2,6 +2,7 @@ import "./register.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import apiRequest from "../../lib/apiRequest";
+import PasswordInput from "../../components/passwordInput/PasswordInput";
 
 function Register() {
   const [error, setError] = useState("");
@@ -41,7 +42,11 @@ function Register() {
           <h1>Create an Account</h1>
           <input name="username" type="text" placeholder="Username" />
           <input name="email" type="text" placeholder="Email" />
-          <input name="password" type="password" placeholder="Password" />
+          <PasswordInput
+            name="password"
+            placeholder="Password"
+            required={true}
+          />
           <button disabled={isLoading}>Register</button>
           {error && <span>{error}</span>}
           <Link to="/login">Do you have an account?</Link>

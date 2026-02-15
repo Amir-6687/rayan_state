@@ -3,6 +3,7 @@ import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
 import { AuthContext } from "../../context/AuthContext";
+import PasswordInput from "../../components/passwordInput/PasswordInput";
 
 function Login() {
   const [error, setError] = useState("");
@@ -49,11 +50,10 @@ function Login() {
             type="text"
             placeholder="Username"
           />
-          <input
+          <PasswordInput
             name="password"
-            type="password"
-            required
             placeholder="Password"
+            required={true}
           />
           <button disabled={isLoading}>Login</button>
           {error && <span>{error}</span>}
